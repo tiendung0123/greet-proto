@@ -1,0 +1,13 @@
+# これはGo言語用のコード生成設定ファイルです。
+# Bufは、この設定を使って自動的にコードを生成します。
+
+version: v2  # これは設定ファイルのバージョンです。v2は新しいバージョンです。
+
+plugins:
+  - remote: buf.build/protocolbuffers/go  # これは、Go言語用のコードを生成するプラグインです。
+    out: gen/go  # 生成されたコードは、このディレクトリに保存されます。
+    opt: paths=source_relative  # 生成されるファイルのパスを元のprotoファイルと相対的に保持します。
+
+  - remote: buf.build/connectrpc/go # これは、Connect-Go（gRPC互換のHTTPベースAPI）用のコードを生成するプラグインです。
+    out: gen/go  # 生成されたコードは、このディレクトリに保存されます。
+    opt: paths=source_relative  # 生成されるファイルのパスを元のprotoファイルと相対的に保持します。

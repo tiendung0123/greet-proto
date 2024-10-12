@@ -1,0 +1,17 @@
+# これはBufの設定ファイルです。Bufは、Protocol Buffers（プロトコルバッファ）という
+# 特別なファイルを使って、コンピュータ同士が話すためのルールを管理するツールです。
+
+version: v2  # これは設定ファイルのバージョンです。v2は新しいバージョンです。
+
+name: buf.build/tiendung0123/greet-proto  # これはプロジェクトの名前です。インターネット上で一意に識別されます。
+
+deps:
+  - buf.build/googleapis/googleapis  # これはGoogleのAPIを使うための依存関係です。
+
+breaking:
+  use:
+    - FILE  # これは、ファイルレベルでの破壊的変更（大きな変更）を検出する設定です。
+
+lint:
+  use:
+    - DEFAULT  # これは、コードの品質をチェックするためのデフォルトのルールを使う設定です。

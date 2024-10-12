@@ -1,0 +1,14 @@
+# これはTypeScript用のコード生成設定ファイルです。
+# Bufは、この設定を使って自動的にコードを生成します。
+# FYI: https://connectrpc.com/docs/web/generating-code
+
+version: v2  # これは設定ファイルのバージョンです。v2は新しいバージョンです。
+
+plugins:
+  - local: protoc-gen-es # これは、標準的なTypeScriptコードを生成するプラグインです。
+    out: gen/ts  # 生成されたコードは、このディレクトリに保存されます。
+    opt: target=ts  # TypeScript向けのコードを生成するオプションです。
+
+  - local: protoc-gen-connect-es  # これは、Connect-Web（TypeScript用のgRPC互換HTTPクライアント）用のコードを生成するプラグインです。
+    out: gen/ts  # 生成されたコードは、このディレクトリに保存されます。
+    opt: target=ts  # TypeScript向けのコードを生成するオプションです。
